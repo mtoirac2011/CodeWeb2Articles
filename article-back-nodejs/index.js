@@ -1,20 +1,16 @@
-'use strict'
-
-var mongoose = require('mongoose')
-
-//Create the Server
+//'use strict'
+const mongoose = require('mongoose');
 var app = require('./app')
 var port = 3700
 
-// Create the connection to MongoDB
-mongoose.Promise = global.Promise
+mongoose.Promise = global.Promise;
 mongoose.connect('mongodb://0.0.0.0:27017/articles')
     .then(() => {
-        console.log('Connection to MongoDB successfully')
+        console.log('Connection successfully from mongodb...');
 
-        //Create the Server
+        //Creating Server
         app.listen(port, () => {
-            console.log(`Server running in port localhost:${port}`)
+            console.log(" Server running in port: 3700")
         })
     })
-    .catch(err => console.log(err))
+    .catch(err => console.log(err));

@@ -7,8 +7,8 @@ var articleSchema = schema({
     title: String,
     description: String,
     created: Date,
-    completed: Boolean,
-    image: String
+    image: String,
+    completed: Boolean
 })
 
-module.exports = mongoose.model('Article', articleSchema)
+module.exports = mongoose.model('article', articleSchema)

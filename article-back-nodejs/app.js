@@ -4,16 +4,16 @@
 var express = require('express')
 var bodyParser = require('body-parser')
 
-var app = express()
+//Cargar archivos de Rutas
+var articleRoutes = require('./route/articleRoute')
 
-//Load routes file
-var articleRoute = require('./route/articleRoute')
+var app = express();
 
 //Middlewares
 app.use(bodyParser.urlencoded({extended: false}))
 app.use(bodyParser.json())
 
-// CORS y cabeceras
+// Configurar CORS y cabeceras
 app.use((req, res, next) => {
     res.header('Access-Control-Allow-Origin', '*');
     res.header('Access-Control-Allow-Headers', 'Authorization, X-API-KEY, Origin, X-Requested-With, Content-Type, Accept, Access-Control-Allow-Request-Method');
@@ -22,8 +22,8 @@ app.use((req, res, next) => {
     next();
 });
 
-//Routes
-app.use('/api', articleRoute)
+//Rutas
+app.use('/api', articleRoutes)
 
-//Export
+//exportar
 module.exports = app
