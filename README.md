@@ -1,5 +1,5 @@
 ![Article-Banner](/assets/articles-main.png "Article Welcome")
-## JavaScrip Module 
+## JavaScript Module 
 ###### Version 1.0
 
 This is a ***NodeJS - MongoDB - JavaScript*** project. With this application we try to handle the creation, update, and manage articles. Articles will be created, updated, and erased in an esay way.
@@ -31,3 +31,9 @@ This is a ***NodeJS - MongoDB - JavaScript*** project. With this application we 
 
 * It also contains the model **Article**
 
+
+![RM-Banner](/assets/mongo.png "MongoDB")
+#### MongoDB 
+We use MongoDB as a `No relational database model` to store data
+* This is how our ***art_mongodb*** Mongo database looks like:
+![RM-Banner](/assets/mongodb.png "articles Mongo diagram")
