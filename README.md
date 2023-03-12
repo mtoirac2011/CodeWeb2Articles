@@ -37,3 +37,33 @@ This is a ***NodeJS - MongoDB - JavaScript*** project. With this application we 
 We use MongoDB as a `No relational database model` to store data
 * This is how our ***art_mongodb*** Mongo database looks like:
 ![RM-Banner](/assets/mongodb.png "articles Mongo diagram")
+
+
+#### React
+We installed or updated *nodejs* to create our React module for our Front:
+```sh
+npm install npm -g 
+cd main directory
+npx create-react-app rm-frontend
+```
+We worked with `axios` for doing http requests:
+```sh
+npm install --save axios
+```
+We install bootstrap to use con styles:
+```sh
+npm install bootstrap
+```
+We also installed `react-router-dom` for manage routes and more:
+```sh
+npm install --save react-router-dom
+```
+We also used `react-hook-form` for manage and validate forms:
+```sh
+npm install react-hook-form
+```
+We used SweetAlert2 for alerts:
+```sh
+npm install --save sweetalert2
+```
+![Article-Banner](/assets/articles-main.png "Article Welcome")
