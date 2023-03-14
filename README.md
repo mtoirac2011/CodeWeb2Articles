@@ -2,14 +2,14 @@
 ## JavaScript Module 
 ###### Version 1.0
 
-This is a ***NodeJS - MongoDB - JavaScript*** project. With this application we try to handle the creation, update, and manage articles. Articles will be created, updated, and erased in an esay way.
+This is a ***NodeJS - MongoDB - JavaScript (React)*** project. With this application we try to handle the creation, update, and manage articles. Articles will be created, updated, and erased in an esay way.
 
 ### Technologies used
 | Tecnology  | Description |
 | ---------- | ----------- |
 | NodeJS     | for building our backend |
 | Mongo DB   | to store our articles in a database |
-| JavaScript | to build our frontend |
+| React      | to build our frontend |
 
 
 ![RM-Banner](/assets/nodejs.png "NodeJs")
@@ -18,7 +18,7 @@ This is a ***NodeJS - MongoDB - JavaScript*** project. With this application we 
 * We use NodeJS to build our API backend, and I included these dependencies:
     * Initialize the NodeJS project             
         * npm init -y	
-    * Express (works with HTTP)             
+    * Express (works with HTTP request)             
         * npm install express --save
     * BODY-PARSER (convert request to JSON) 
         * npm install body-parser --save
