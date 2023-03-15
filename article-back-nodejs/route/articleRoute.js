@@ -14,9 +14,10 @@ router.get('/test', articleController.test)
 
 router.get('/articles', articleController.getArticle)
 router.get('/article/:id?', articleController.getArticleById)
-router.post('/save-article', articleController.saveArticle)
+router.post('/article', articleController.saveArticle)
 router.put('/article/:id', articleController.updateArticle)
 router.delete('/article/:id', articleController.deleteArticle)
-router.post('/upload/:id', multipartMiddleware, articleController.uploadImage)
+router.post('/upload-image/:id', multipartMiddleware, articleController.uploadImage)
+router.get('/get-image/:image', articleController.getImageFile)
 
 module.exports = router

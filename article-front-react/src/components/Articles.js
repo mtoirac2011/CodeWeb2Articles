@@ -7,6 +7,8 @@ import update from '../statics/images/update.png'
 import dele from '../statics/images/delete.png'
 import create from '../statics/images/create.png';
 import empty from '../statics/images/empty.png'
+import completed from '../statics/images/completed.png'
+import incompleted from '../statics/images/incompleted.png'
 
 import { useNavigate } from 'react-router-dom';
 import Loading from './Loading';
@@ -95,7 +97,7 @@ const Articles = () => {
                     <thead>
                         <tr>
                             <th></th>
-                            <th>title</th>
+                            <th>Title</th>
                             <th>Description</th>
                             <th>Created</th>
                             <th>Completed</th>
@@ -107,15 +109,20 @@ const Articles = () => {
                             <tr key={article.id}>
                                 {
                                 article.image != null ?
-                                    <td><img src={article.image} className="img-thumbnail cursor" width={40} alt="article" /></td>
+                                    <td><img onClick={() => onEdit(article.id)} src={url + 'get-image/' +article.image} className="img-thumbnail cursor" width={60} alt="article" /></td>
                                 :
-                                    <td><img src={empty} className="img-thumbnail cursor" width={40} alt="article" /></td>
+                                    <td><img src={empty} className="img-thumbnail cursor" width={60} alt="article" /></td>
                                 }
                                 
-                                <td>{article.title.substring(0, 20)}</td>
+                                <td>{article.title.substring(0, 25)}</td>
                                 <td>{article.description.substring(0, 35)+'...'}</td>
-                                <td>{article.created}</td>
-                                <td>{article.completed}</td>
+                                <td>{article.created.substring(0, 10)}</td>
+
+                                {article.completed ?
+                                    <td><img src={completed} className="img-thumbnail cursor" width={25} alt="completed" /></td>
+                                :
+                                    <td><img src={incompleted} className="img-thumbnail cursor" width={30} alt="incompleted" /></td>
+                                }
                                 
 
                                 <td>

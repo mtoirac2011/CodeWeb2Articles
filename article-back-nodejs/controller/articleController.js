@@ -1,6 +1,7 @@
 'use strict'
 var Article = require('../model/articleModel')
 var fs = require('fs')
+const path = require('path')
 
 var controller = {
      home: function(req, res){
@@ -124,6 +125,20 @@ var controller = {
                 files: fileName
             })
         }
+     },
+     getImageFile: function(req, res){
+        var file = req.params.image;
+        var path_file = './uploads/' + file;
+
+        fs.exists(path_file, (exists) => {
+            if (exists){
+                return res.sendFile(path.resolve(path_file))
+            }else{
+                return res.status(200).send({
+                    message: "The image doesn't exist"
+                })
+            }
+        })
      }
 }
 module.exports = controller
