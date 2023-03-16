@@ -26,7 +26,7 @@ const Articles = () => {
     const urlFull =  url + 'articles'
 
     const onCreate = (id)=>{
-        navigate("/article/"+id)
+        navigate("/articleadd")
     }
 
     const onEdit = (id)=>{
