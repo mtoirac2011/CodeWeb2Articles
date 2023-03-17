@@ -19,14 +19,14 @@ const ArticleAdd = () => {
     });
 
     const onSubmit = (data) => {
-        var photoUpdated = null;
+        var imageUpdated = null;
 
         if (data.file[0] !== null && data.file[0] !== undefined){
 
-            photoUpdated = data.file[0].name;
+            imageUpdated = data.file[0].name;
 
             const fd = new FormData();
-            fd.append('file0', data.file[0]);  //file0
+            fd.append('file0', data.file[0]);
 
             //Post
             axios.post("http://localhost:3700/api/upload-image", fd)
@@ -41,7 +41,7 @@ const ArticleAdd = () => {
             title: data.title, 
             description: data.description,
             created: new Date(),
-            image: photoUpdated,
+            image: imageUpdated,
             completed:data.completed
         }
         //Post

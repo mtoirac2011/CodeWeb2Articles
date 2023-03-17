@@ -49,7 +49,12 @@ var controller = {
         article.title = params.title
         article.description = params.description
         article.created = params.created
-        article.image = null
+        if (params.image){
+            article.image = params.image
+        }else{
+            article.image = null
+        }
+        
         article.completed = params.completed
 
         //Save article to MongoDB
@@ -88,43 +93,34 @@ var controller = {
         })
      },
      uploadImage: function(req, res){
-        var articleId = req.params.id
-        var fileName = 'Image not uploaded'
+       //Name of the file
+       let filename = req.file.originalname;
 
-        if (req.files){
-           
-            //Find the file name
-            var filePath = req.files.image.path
-            var fileSplit = filePath.split('\\')
-            var fileName = fileSplit[1]
+       //File fileext
+       let file_split = filename.split('\.')
+       let fileext = file_split[1]
 
-            //Find file extension to validate
-            var extSplit = fileName.split('\.')
-            var extName = extSplit[1]
+       console.log(fileext)
 
-            if (extName == 'png' || extName == 'jpg' || extName == 'jpeg' || extName == 'gif'){
+       
+       //Check correct fileext
+       if (fileext !== 'png' && fileext !== 'jpg' && fileext !== 'jpeg' && fileext !== 'gif'){
 
-                Article.findByIdAndUpdate(articleId, {image: fileName}, {new: true}, (error, articleUpdated) => {
-
-                    if (error) return res.status(500).send({message: 'Error trying to update the image'})
-        
-                    if (!articleUpdated) return res.status(404).send({message: 'Unable to update the imagen'})
-        
-                    return res.status(200).send({article: articleUpdated})
+            fs.unlink(req.file.path, (error) => {
+                return res.status(400).send({
+                    status: 'Error',
+                    message: 'Image format not permitted',
+                    archivo: fileext,
+                    filename: filename
                 })
-            }else{
-            
-                fs.unlink(filePath, (error) => {
-                    return res.status(200).send({message: 'The file extension is not valid'})
-                })
-            }
-
-            
-        }else {
-            return res.status(404).send({
-                files: fileName
             })
-        }
+       }else{
+        return res.status(200).send({
+            status: 'success',
+            files: req.file
+        })
+       }
+
      },
      getImageFile: function(req, res){
         var file = req.params.image;
