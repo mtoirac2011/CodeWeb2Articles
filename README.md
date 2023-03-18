@@ -22,8 +22,8 @@ This is a ***NodeJS - MongoDB - JavaScript (React)*** project. With this applica
         * npm install express --save
     * BODY-PARSER (convert request to JSON) 
         * npm install body-parser --save
-    * Connect-Multiparty (upload files)     
-        * npm install connect-multiparty --save
+    * Multer (upload files)     
+        * npm install multer --save
     * MONGOOSE (connect to MongoDB)         
         * npm install mongoose --save
     * NODEMON (live Server)         
@@ -38,8 +38,7 @@ We use MongoDB as a `No relational database model` to store data
 * This is how our ***art_mongodb*** Mongo database looks like:
 ![RM-Banner](/assets/mongodb.png "articles Mongo diagram")
 
-
-#### React
+#### React ![RM-Banner](/assets/react.png "React")
 We installed or updated *nodejs* to create our React module for our Front:
 ```sh
 npm install npm -g 

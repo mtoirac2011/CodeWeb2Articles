@@ -4,6 +4,7 @@ import Header from './Header'
 import Footer from './Footer'
 import Articles from './Articles';
 import ArticleAdd from './ArticleAdd';
+import ArticleUpdate from './ArticleUpdate';
 
 const Router = () => {
     return (
@@ -19,7 +20,7 @@ const Router = () => {
                     <Route exact path='/articles' element={<Articles />} />
 
                     <Route exact path='/articleadd' element={<ArticleAdd />} />
-
+                    <Route exact path='/articleupdate/:id' element={<ArticleUpdate />} />
                    
 
                 </Routes>

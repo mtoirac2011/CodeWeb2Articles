@@ -23,14 +23,9 @@ const Articles = () => {
 
     const url = Global.url;
     const navigate = useNavigate();
-    const urlFull =  url + 'articles'
 
-    const onCreate = (id)=>{
+    const onCreate = ()=>{
         navigate("/articleadd")
-    }
-
-    const onEdit = (id)=>{
-        navigate("/articleedit/"+id)
     }
 
     const onDelete = (id)=>{
@@ -55,12 +50,15 @@ const Articles = () => {
     }
 
     const onUpdate = (id)=>{
-        navigate("/updateArticle/"+id)
+        navigate("/articleupdate/"+id)
+    }
+
+    const onDetail= (id)=>{
+        navigate("articleupdate/"+id)
     }
 
     const getArticles = async ()=> {
-        console.log('urlFull', urlFull)
-        await axios.get(urlFull)
+        await axios.get(url + 'articles')
                 .then(res => {
                     setStatus(true);
                     setArticles(res.data.articles)
@@ -70,7 +68,7 @@ const Articles = () => {
 
     useEffect(() => {
         getArticles();
-      }, []); 
+    }, []); 
 
     if (articles.length >= 1){
         
@@ -99,8 +97,8 @@ const Articles = () => {
                             <th></th>
                             <th>Title</th>
                             <th>Description</th>
-                            <th>Created</th>
                             <th>Completed</th>
+                            <th>Created</th>                            
                         </tr>
                     </thead>
                     <tbody>
@@ -109,24 +107,22 @@ const Articles = () => {
                             <tr key={article.id}>
                                 {
                                 article.image != null ?
-                                    <td><img onClick={() => onEdit(article.id)} src={url + 'get-image/' +article.image} className="img-thumbnail cursor" width={60} alt="article" /></td>
+                                    <td><img onClick={() => onDetail(article.id)} src={url + 'get-image/' +article.image} className="img-thumbnail cursor" width={60} alt="Details" /></td>
                                 :
-                                    <td><img src={empty} className="img-thumbnail cursor" width={60} alt="article" /></td>
+                                    <td><img onClick={() => onDetail(article.id)} src={empty} className="img-thumbnail cursor" width={60} alt="Details" /></td>
                                 }
                                 
                                 <td>{article.title.substring(0, 25)}</td>
                                 <td>{article.description.substring(0, 35)+'...'}</td>
-                                <td>{article.created.substring(0, 10)}</td>
-
                                 {article.completed ?
                                     <td><img src={completed} className="img-thumbnail cursor" width={25} alt="completed" /></td>
                                 :
                                     <td><img src={incompleted} className="img-thumbnail cursor" width={30} alt="incompleted" /></td>
                                 }
-                                
+                                <td>{article.created.substring(0, 10)}</td>
 
                                 <td>
-                                    <img onClick={() => onEdit(article.id)} src={edit} className="img-thumbnail cursor" width={25} alt="Edit" />
+                                    <img onClick={() => onDetail(article.id)} src={edit} className="img-thumbnail cursor" width={25} alt="Edit" />
                                 </td>
 
                                 <td>
