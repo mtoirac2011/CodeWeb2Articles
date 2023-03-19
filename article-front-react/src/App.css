@@ -36,3 +36,29 @@
     transform: rotate(360deg);
   }
 }
+
+
+/* My CSS Effect */
+#content{
+  font-size: 22px;
+  text-align: justify;
+}
+/*RESPONSIVE*/
+
+/*From 963px until 1488px */
+@media (max-width: 1488px){
+  .center{
+      width: 85%;
+  }
+}
+
+/*From 963px ntil 1488px */
+@media (max-width: 1314px){
+  .center{
+      width: 95%;
+  }
+
+  #menu ul{
+      width: auto;
+  }
+}

@@ -1,8 +1,9 @@
 import React , {useState, useEffect} from 'react';
 import axios from 'axios';
 import Global from './Global'
+import moment from 'moment'
 
-import edit from '../statics/images/edit.png'
+import detail from '../statics/images/detail.png'
 import update from '../statics/images/update.png'
 import dele from '../statics/images/delete.png'
 import create from '../statics/images/create.png';
@@ -28,25 +29,29 @@ const Articles = () => {
         navigate("/articleadd")
     }
 
-    const onDelete = (id)=>{
+    const getDelete = async (id)=> {
+        await axios.delete(url + "article/"+ id)
+                .then(res => {
+                    getArticles()
+                })
+    }
+
+    const onDelete = (id, title)=>{
         Swal.fire({
             icon: "warning",
-            title: "Are you sure to delete '"+ id +"' article?",
+            title: "Are you sure to delete '"+ title.substring(0, 15) +"...' article?",
             showDenyButton: true,
             denyButtonText: "Cancel",
             denyButtonColor: "#6C757D",
             confirmButtonText: "Delete",
             confirmButtonColor: "#0D6EFD",
-          }).then((res) => {
-            if (res.isConfirmed) {
-                axios.delete(url + "article/"+ id)
-                .then(res => {
-                  setStatus(false);
-              })
-
-            }
+            })
+            .then((res) => {
+                if (res.isConfirmed) {
+                    getDelete(id)
+                }
            
-          });
+        });
     }
 
     const onUpdate = (id)=>{
@@ -54,7 +59,7 @@ const Articles = () => {
     }
 
     const onDetail= (id)=>{
-        navigate("articleupdate/"+id)
+        navigate("/articledetail/"+id)
     }
 
     const getArticles = async ()=> {
@@ -63,12 +68,11 @@ const Articles = () => {
                     setStatus(true);
                     setArticles(res.data.articles)
                 })
-        console.log(articles)
     }
 
     useEffect(() => {
         getArticles();
-    }, []); 
+    }, [articles]); 
 
     if (articles.length >= 1){
         
@@ -107,9 +111,9 @@ const Articles = () => {
                             <tr key={article.id}>
                                 {
                                 article.image != null ?
-                                    <td><img onClick={() => onDetail(article.id)} src={url + 'get-image/' +article.image} className="img-thumbnail cursor" width={60} alt="Details" /></td>
+                                    <td><img onClick={() => onUpdate(article._id)} src={url + 'get-image/' +article.image} className="img-thumbnail cursor" width={60} alt="Details" /></td>
                                 :
-                                    <td><img onClick={() => onDetail(article.id)} src={empty} className="img-thumbnail cursor" width={60} alt="Details" /></td>
+                                    <td><img onClick={() => onUpdate(article._id)} src={empty} className="img-thumbnail cursor" width={60} alt="Details" /></td>
                                 }
                                 
                                 <td>{article.title.substring(0, 25)}</td>
@@ -119,18 +123,21 @@ const Articles = () => {
                                 :
                                     <td><img src={incompleted} className="img-thumbnail cursor" width={30} alt="incompleted" /></td>
                                 }
-                                <td>{article.created.substring(0, 10)}</td>
+                                <td>{moment(article.created).fromNow()}</td>
 
                                 <td>
-                                    <img onClick={() => onDetail(article.id)} src={edit} className="img-thumbnail cursor" width={25} alt="Edit" />
+                                    <img onClick={() => onDetail(article._id)} src={detail} className="img-thumbnail cursor" 
+                                        width={25} alt="Details" data-bs-toggle="tooltip" data-bs-placement="top" title='Details'/>
                                 </td>
 
                                 <td>
-                                    <img onClick={() => onDelete(article.id)} src={dele} className="img-thumbnail cursor" width={25} alt="Delete" />
+                                    <img onClick={() => onDelete(article._id, article.title)} src={dele} className="img-thumbnail cursor" 
+                                        width={25} alt="Delete" data-bs-toggle="tooltip" data-bs-placement="top" title='Delete this article'/>
                                 </td>
 
                                 <td>
-                                    <img onClick={() => onUpdate(article.id)} src={update} className="img-thumbnail cursor" width={25} alt="Update" />
+                                    <img onClick={() => onUpdate(article._id)} src={update} className="img-thumbnail cursor" 
+                                        width={25} alt="Update" data-bs-toggle="tooltip" data-bs-placement="top" title='Update this article'/>
                                 </td>
                                
                                 

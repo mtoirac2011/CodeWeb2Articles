@@ -25,8 +25,8 @@ const ArticleUpdate = () => {
             const fd = new FormData();
             fd.append('file0', data.file[0]);
 
-            //Put
-            axios.put("http://localhost:3700/api/upload-image", fd)
+            //Post
+            axios.post("http://localhost:3700/api/upload-image", fd)
             .then(res =>{
                 if(res.ok) {
                     console.log(res.data);
@@ -36,14 +36,14 @@ const ArticleUpdate = () => {
 
         const loadParams = {
             id:id, 
-            name: data.title, 
+            title: data.title, 
             description: data.description,
-            published: new Date(),
+            created: new Date(),
             image: imageUpdated,
             completed:data.completed
         }
         //Put
-        axios.put(url + "article", loadParams)
+        axios.put(url + "article/" + id, loadParams)
             .then(res => {
                 if (res.data){ 
                 }
@@ -55,17 +55,20 @@ const ArticleUpdate = () => {
         navigate("/articles");
     }
 
-    const getArticle = async ()=> {
-        await axios.get(url + 'article/' + '6415c71d148216999ed13017')
-                .then(res => {
-                    setArticle(res.data.article)
-                })
-        console.log(article)
-    }
+    
 
     useEffect(()=>{
+
+        const getArticle = async ()=> {
+            await axios.get(url + 'article/' + id)
+                    .then(res => {
+                        setArticle(res.data.article)
+                    })
+            console.log(article)
+        }
+
         getArticle();
-    }, [url, id])
+    }, [id, url, article])
 
     if (article != null){
         return (

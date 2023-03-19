@@ -15,11 +15,15 @@ var controller = {
         })
      },
      getArticle: function(req, res){
-        // Article.find({completed: true}).sort('created').exec((error, articles) => {
+        //Article.find({completed: true}).limit(3).sort('created').exec((error, articles) =>
+        //or
+        // let query = Article.find({})
+        // query.sort({created: -1})
+        // query.exec((error, articles) => {}
 
-        Article.find({}).sort('created').exec((error, articles) => {
+        Article.find({}).sort({created: -1}).exec((error, articles) => {
 
-            if (error) return res.status(500).send({message: 'Error trying to retrieve the document'})
+            if (error || !articles) return res.status(500).send({message: 'Error trying to retrieve articles'})
 
             if (!articles) return res.status(404).send({message: 'There no articles to show'})
 
@@ -102,7 +106,6 @@ var controller = {
 
        console.log(fileext)
 
-       
        //Check correct fileext
        if (fileext !== 'png' && fileext !== 'jpg' && fileext !== 'jpeg' && fileext !== 'gif'){
 

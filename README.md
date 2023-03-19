@@ -15,7 +15,7 @@ This is a ***NodeJS - MongoDB - JavaScript (React)*** project. With this applica
 ![RM-Banner](/assets/nodejs.png "NodeJs")
 #### NodeJS  
 * The ** API ** was made using [NodeJS](https://nodejs.org/en/).
-* We use NodeJS to build our API backend, and I included these dependencies:
+* I used NodeJS to build our API backend, and I included these dependencies:
     * Initialize the NodeJS project             
         * npm init -y	
     * Express (works with HTTP request)             
@@ -34,18 +34,18 @@ This is a ***NodeJS - MongoDB - JavaScript (React)*** project. With this applica
 
 ![RM-Banner](/assets/mongo.png "MongoDB")
 #### MongoDB 
-We use MongoDB as a `No relational database model` to store data
+I used MongoDB as a `No relational database model` to store data
 * This is how our ***art_mongodb*** Mongo database looks like:
 ![RM-Banner](/assets/mongodb.png "articles Mongo diagram")
 
 #### React ![RM-Banner](/assets/react.png "React")
-We installed or updated *nodejs* to create our React module for our Front:
+I installed or updated *nodejs* to create our React module for our Front:
 ```sh
 npm install npm -g 
 cd main directory
 npx create-react-app rm-frontend
 ```
-We worked with `axios` for doing http requests:
+I worked with `axios` for doing http requests:
 ```sh
 npm install --save axios
 ```
@@ -53,16 +53,20 @@ We install bootstrap to use con styles:
 ```sh
 npm install bootstrap
 ```
-We also installed `react-router-dom` for manage routes and more:
+I also installed `react-router-dom` for manage routes and more:
 ```sh
 npm install --save react-router-dom
 ```
-We also used `react-hook-form` for manage and validate forms:
+I installed `react-hook-form` for manage and validate forms:
 ```sh
 npm install react-hook-form
 ```
-We used SweetAlert2 for alerts:
+I used SweetAlert2 for alerts:
 ```sh
 npm install --save sweetalert2
+```
+I installed moment to format Dates:
+```sh
+npm install moment --save
 ```
 ![Article-Banner](/assets/articles-main.png "Article Welcome")
