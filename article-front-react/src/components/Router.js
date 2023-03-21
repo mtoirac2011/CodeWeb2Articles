@@ -6,6 +6,7 @@ import Articles from './Articles';
 import ArticleAdd from './ArticleAdd';
 import ArticleUpdate from './ArticleUpdate';
 import ArticleDetail from './ArticleDetail';
+import Dashboard from './Dashboard';
 
 const Router = () => {
     return (
@@ -17,6 +18,7 @@ const Router = () => {
                 <Routes>
 
                     <Route exact path='/home' element={<Home />} />
+                    <Route exact path='/dashboard' element={<Dashboard />} />
                     <Route exact path='/' element={<Articles />} />
                     <Route exact path='/articles' element={<Articles />} />
 

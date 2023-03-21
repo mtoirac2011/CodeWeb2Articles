@@ -69,4 +69,8 @@ I installed moment to format Dates:
 ```sh
 npm install moment --save
 ```
+Finally, I installed react-donut-chart to add Charts:
+```sh
+npm install react-donut-chart --save
+```
 ![Article-Banner](/assets/articles-main.png "Article Welcome")
