@@ -1,43 +1,48 @@
-import React from 'react';
-import { NavLink } from 'react-router-dom';
+import React from "react";
+import {NavLink} from 'react-router-dom';
+import code from '../statics/images/codeplural.png'
 
-const Header = () => {
+class Header extends React.Component{
 
-    return (
-        
-        <nav className="navbar navbar-expand-sm navbar-dark bg-dark">
-            <div className="container-fluid">
-                <a className="navbar-brand" href='http://localhost:3000/home'><h3>ARTICLES - Manager</h3></a>
-                {/* <!-- MENU --> */}
-                <nav id="menu">
-                    <ul className="list-inline">
-                        <li>
-                            <NavLink to="/home" className= {({ isActive }) => (isActive ? 'active' : 'inactive')}>Home</NavLink>
-                        </li>
-                        <li>
-                            <NavLink to="/claimlist" className={({ isActive }) => (isActive ? 'active' : 'inactive')}>Claims</NavLink>
-                        </li>
-                        <li>
-                            {/* <NavLink to="" className={({ isActive }) => (isActive ? 'active' : 'inactive')}>About</NavLink> */}
-                            
-                        </li>
-                    </ul>
-                </nav>
+    render(){
 
-                {/* <div className="collapse navbar-collapse" id="mynavbar">
-                    
-                    <form class="d-flex" role="search">
-                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
-                        <button class="btn btn-outline-primary" type="submit">Search</button>
-                    </form>
-                            
-                </div> */}
-            </div>
-           
-        </nav> 
+        return(
+            <>
+                <header id="header">
+                    <div className="center">
+                        {/* <!-- LOGO --> */}
+                        <div id="logo">
+                            <img src={code}  class="app-logo" alt="Logotipo" />
+                            <span id="brand">
+                                <strong>Article</strong>Manager
+                            </span>
+                        </div>
 
-            
-    );
+                        {/* <!-- MENU --> */}
+                        <nav id="menu">
+                            <ul>
+                                <li>
+                                    <NavLink to="/dashboard" className={({ isActive }) => (isActive ? 'active' : 'inactive')}>Dashboard</NavLink>
+                                </li>
+                                <li>
+                                    <NavLink to="/articles" className={({ isActive }) => (isActive ? 'active' : 'inactive')}>Articles</NavLink>
+                                </li>
+                                <li>
+                                    <NavLink to="/countries" className={({ isActive }) => (isActive ? 'active' : 'inactive')}>ConverterTool</NavLink>
+                                </li>
+                                <li>
+                                    <NavLink to="/positions" className={({ isActive }) => (isActive ? 'active' : 'inactive')}>Positions</NavLink>
+                                </li>
+                            </ul>
+                        </nav>
+
+                        {/* <!--Clean float--> */}
+                        <div className="clearfix"></div>
+                    </div>
+                </header>
+            </>
+        );
+    }
 }
 
 export default Header;

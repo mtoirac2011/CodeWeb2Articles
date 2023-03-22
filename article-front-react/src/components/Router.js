@@ -7,6 +7,7 @@ import ArticleAdd from './ArticleAdd';
 import ArticleUpdate from './ArticleUpdate';
 import ArticleDetail from './ArticleDetail';
 import Dashboard from './Dashboard';
+import Error from './Error'
 
 const Router = () => {
     return (
@@ -26,7 +27,7 @@ const Router = () => {
                     <Route exact path='/articleupdate/:id' element={<ArticleUpdate />} />
                     <Route ecact path='/articledetail/:id' element={<ArticleDetail />} />
                     
-                   
+                    <Route exact path="*" element={<Error />} />
 
                 </Routes>
 

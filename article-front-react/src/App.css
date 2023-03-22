@@ -39,6 +39,98 @@
 
 
 /* My CSS Effect */
+/* Header*/
+
+#header {
+  height: 120px;
+  width: 100%;
+  background: white;
+  border-bottom: 1px solid #ccc;
+  border-top: 5px solid #61dafb;
+}
+
+.center {
+  width: 75%;
+  margin: 0px auto;
+}
+
+.clearfix {
+  clear: both;
+  float: none;
+}
+
+#logo {
+  width: 30%;
+  font-size: 30px;
+  float: left;
+  margin-top: 35px;
+}
+
+#logo img {
+  display: block;
+  float: left;
+  height: 60px;
+  margin-top: -9px;
+  margin-right: -10px;
+  animation: rotate infinite 30s linear;
+}
+
+@keyframes rotate {
+  from {
+      transform: rotate(0deg);
+  }
+  to {
+      transform: rotate(360deg);
+  }
+}
+
+.error404 {
+  width: 60%;
+}
+
+.notfound {
+  color: red;
+  font-size: 20px;
+}
+
+/*MENU */
+#menu {
+  width: 70%;
+  float: right;
+  font-size: 18px;
+}
+
+#menu ul {
+  line-height: 85px;
+  width: 60%;
+  float: right;
+}
+
+#menu ul li {
+  display: inline-block;
+  list-style: none;
+  height: 46px;
+  margin-left: 15px;
+  margin-right: 15px;
+}
+
+#menu a {
+  text-decoration: none;
+  color: #444;
+  transition: 300ms all;
+}
+
+#menu a:hover {
+  color: #3cb2d3;
+}
+
+.active {
+  border-bottom: 2px solid #3cb2d3;
+}
+
+.inactive {
+  border-bottom: 1px solid white;
+}
 
 /* .total{
   margin: 0 auto;
@@ -55,6 +147,8 @@
   font-size: 22px;
   text-align: justify;
 }
+
+
 /*RESPONSIVE*/
 
 /*From 963px until 1488px */
@@ -73,4 +167,28 @@
   #menu ul{
       width: auto;
   }
+}
+
+/* FOOTER */
+#footer{
+  background: white;
+  width: 100%;
+  height: 70px;
+  line-height: 70px;
+  color: #444;
+}
+
+#footer p {
+  margin: 0px;
+  padding: 0px;
+}
+
+/* ERROR */
+.error404 {
+  width: 60%;
+}
+
+.notfound {
+  color: red;
+  font-size: 20px;
 }
