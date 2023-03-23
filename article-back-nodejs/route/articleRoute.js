@@ -25,6 +25,7 @@ router.get('/home', articleController.home)
 router.get('/test', articleController.test)
 
 router.get('/articles', articleController.getArticle)
+router.get('/completed', articleController.getDashboard)
 router.get('/article/:id?', articleController.getArticleById)
 router.post('/article', articleController.saveArticle)
 router.put('/article/:id', articleController.updateArticle)

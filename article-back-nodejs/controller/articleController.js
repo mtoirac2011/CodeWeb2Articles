@@ -30,6 +30,28 @@ var controller = {
             return res.status(200).send({articles})
         })
      },
+     getDashboard: function(req, res){
+        //Article.find({completed: true}).limit(3).sort('created').exec((error, articles) =>
+        //or
+        // let query = Article.find({})
+        // query.sort({created: -1})
+        // query.exec((error, articles) => {}
+        let dashboard = 0;
+
+        Article.find({completed: true}).exec((error, articles) => {
+
+            if (error || !articles) return res.status(500).send({message: 'Error retrieving completed articles'})
+
+            if (!articles) return res.status(404).send({message: 'There no completed articles to show'})
+
+            return res.status(200).send({
+                dashboard: {
+                    completed: articles.length
+                }
+                
+            })
+        })
+     },
      getArticleById: function(req, res){
         var articleId = req.params.id;
 

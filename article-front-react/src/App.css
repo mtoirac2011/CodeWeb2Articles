@@ -136,12 +136,19 @@
   margin: 0 auto;
 } */
 .total{
-  padding-top: 50;
+  margin-top: 90px;
+  border: 1px solid #eff8fa;
+  border-left: 4px solid #3cb2d3;
+  border-radius: 10px;
 }
-
+.texto{
+  margin-top: 30px;
+  font-weight: bold;
+}
 .total h1{
   font-size: 80px;
-  margin-top: 120px;
+  margin-top: 60px;
+  color: #3cb2d3;
 }
 #content{
   font-size: 22px;

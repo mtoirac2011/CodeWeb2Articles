@@ -5,9 +5,8 @@ import Global from './Global';
 
 const Dashboard = () =>{
 
-    const {completed, setCompleted} = useState(0)
-    const {incompleted, setIncompleted} = useState(0)
     const [articles, setArticles] = useState([])
+    const [dashboard, setDashboard] = useState({})
 
     const url = Global.url
 
@@ -18,40 +17,33 @@ const Dashboard = () =>{
                 })
     }
 
-    const getCompleted = (articles)=> {
-        let count = 0
-        if (articles.lenght > 0){
-            articles.forEach(article => {
-                if (article.completed){
-                    count++;
-                } 
-            }) 
-        }
-        console.log('articles: ' + articles.length)
-        console.log('count: ' + count)
-
-        // setCompleted(count/articles.lenght*100)
-        // setIncompleted(100 - completed)
-
-        // console.log(completed)
-        // console.log(incompleted)
+    const getCompleted = async ()=> {
+        await axios.get(url + 'completed')
+            .then(res => {
+                setDashboard(res.data.dashboard)
+            })
+        
     }
 
     useEffect(() => {
-        getArticles();
-        getCompleted(articles)
+        getArticles()
+        getCompleted()
     }, []); 
 
     return (
         <div className='container'>
              <div className='row mb-20'>
-                <p>
-                    
-                </p>
+                <p></p>
              </div>
             <div className='row d-flex mt-40 pt-20'>
-                <div className='col-md-5 total'>
-                    <h1>{'Total: ' +articles.length}</h1>
+
+                <div className='col-md-5'>
+
+                    <div className='total'>
+                        <p className='texto'> TOTAL ARTICLES</p>
+                        <h1>{articles.length}</h1>
+                    </div>
+                    
                 </div>
 
                 <div className='col-md-5 mt-20'>
@@ -59,11 +51,11 @@ const Dashboard = () =>{
                         data={[
                             {
                             label: 'Completed',
-                            value: 40,
+                            value: Math.round(dashboard.completed / articles.length * 100)
                             },
                             {
                             label: 'Incompleted',
-                            value: 60,
+                            value: 100 - Math.round(dashboard.completed / articles.length * 100),
                             isEmpty: false
                             }
                         ]}
