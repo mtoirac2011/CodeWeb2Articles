@@ -28,11 +28,9 @@ class Header extends React.Component{
                                     <NavLink to="/articles" className={({ isActive }) => (isActive ? 'active' : 'inactive')}>Articles</NavLink>
                                 </li>
                                 <li>
-                                    <NavLink to="/countries" className={({ isActive }) => (isActive ? 'active' : 'inactive')}>ConverterTool</NavLink>
+                                    <NavLink to="/converter" className={({ isActive }) => (isActive ? 'active' : 'inactive')}>ConverterTool</NavLink>
                                 </li>
-                                <li>
-                                    <NavLink to="/positions" className={({ isActive }) => (isActive ? 'active' : 'inactive')}>Positions</NavLink>
-                                </li>
+                             
                             </ul>
                         </nav>
 

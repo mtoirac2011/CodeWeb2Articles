@@ -9,7 +9,7 @@ const Loading = () => {
             <div className="spinner-border" role="status">
                 <span className="visually-hidden">Loading...</span>
             </div>
-            <p> Loading...</p>
+            <p className='loading'> Loading...</p>
         </div>
         
         <div className='altura'></div>

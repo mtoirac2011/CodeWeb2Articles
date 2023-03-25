@@ -26,7 +26,7 @@ const ArticleUpdate = () => {
             fd.append('file0', data.file[0]);
 
             //Post
-            axios.post("http://localhost:3700/api/upload-image", fd)
+            axios.post(url + "upload-image", fd)
             .then(res =>{
                 if(res.ok) {
                     console.log(res.data);

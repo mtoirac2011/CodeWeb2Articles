@@ -7,9 +7,9 @@ This is a ***NodeJS - MongoDB - JavaScript (React)*** project. With this applica
 ### Technologies used
 | Tecnology  | Description |
 | ---------- | ----------- |
-| NodeJS     | for building our backend |
-| Mongo DB   | to store our articles in a database |
-| React      | to build our frontend |
+| NodeJS     | for building the backend |
+| Mongo DB   | to store articles in a database |
+| React      | to build the frontend |
 
 
 ![RM-Banner](/assets/nodejs.png "NodeJs")
@@ -35,7 +35,7 @@ This is a ***NodeJS - MongoDB - JavaScript (React)*** project. With this applica
 ![RM-Banner](/assets/mongo.png "MongoDB")
 #### MongoDB 
 I used MongoDB as a `No relational database model` to store data
-* This is how our ***art_mongodb*** Mongo database looks like:
+* This is how the***articles*** Mongo database looks like:
 ![RM-Banner](/assets/mongodb.png "articles Mongo diagram")
 
 #### React ![RM-Banner](/assets/react.png "React")

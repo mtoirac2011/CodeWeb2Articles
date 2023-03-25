@@ -1,6 +1,8 @@
 import axios from 'axios';
 import React, {useState, useEffect} from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
+import moment from 'moment'
+
 import Global from './Global';
 import empty from '../statics/images/empty.png'
 import completed from '../statics/images/completed.png'
@@ -60,7 +62,7 @@ const ArticleDetail = () => {
 
                         <div id='created mt-20'>
                             <p>
-                                {article.created}
+                                {moment(article.created).format('MM/DD/YYYY')}
                             </p>
                         </div>
 

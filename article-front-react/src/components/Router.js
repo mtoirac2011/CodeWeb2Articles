@@ -18,11 +18,10 @@ const Router = () => {
                 
                 <Routes>
 
-                    <Route exact path='/home' element={<Home />} />
+                    <Route exact path='/' element={<Dashboard />} />
                     <Route exact path='/dashboard' element={<Dashboard />} />
-                    <Route exact path='/' element={<Articles />} />
-                    <Route exact path='/articles' element={<Articles />} />
 
+                    <Route exact path='/articles' element={<Articles />} />
                     <Route exact path='/articleadd' element={<ArticleAdd />} />
                     <Route exact path='/articleupdate/:id' element={<ArticleUpdate />} />
                     <Route ecact path='/articledetail/:id' element={<ArticleDetail />} />
