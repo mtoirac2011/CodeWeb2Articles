@@ -1,5 +1,4 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Home from './Home'
 import Header from './Header'
 import Footer from './Footer'
 import Articles from './Articles';
@@ -8,6 +7,7 @@ import ArticleUpdate from './ArticleUpdate';
 import ArticleDetail from './ArticleDetail';
 import Dashboard from './Dashboard';
 import Error from './Error'
+import Converter from './Converter';
 
 const Router = () => {
     return (
@@ -25,6 +25,8 @@ const Router = () => {
                     <Route exact path='/articleadd' element={<ArticleAdd />} />
                     <Route exact path='/articleupdate/:id' element={<ArticleUpdate />} />
                     <Route ecact path='/articledetail/:id' element={<ArticleDetail />} />
+
+                    <Route exact path='/converter' element={<Converter />} />
                     
                     <Route exact path="*" element={<Error />} />
 

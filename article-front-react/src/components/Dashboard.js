@@ -36,9 +36,9 @@ const Dashboard = () =>{
     if (articles.length >= 1){
         return (
             <div className='container'>
-                 <div className='row mb-20'>
-                    <p></p>
-                 </div>
+                <div className='row mb-20'>
+                    <h2 className='subtitle mt-3'>Dashboard</h2>
+                </div>
                 <div className='row d-flex mt-40 pt-20'>
     
                     <div className='col-md-5'>

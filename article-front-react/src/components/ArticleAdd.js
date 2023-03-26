@@ -64,7 +64,7 @@ const ArticleAdd = () => {
  
     return (
         <div className="container mb-4">
-            <h1 className="p-4 bg-header mt-1">Adding an Article</h1>
+            <h2 className="subtitle mt-3">Adding an Article</h2>
             
             <div className='row mb-3'>
 
@@ -80,7 +80,7 @@ const ArticleAdd = () => {
                                 className="form-control" 
                                 {...register('title', {required:true})} 
                             />
-                            {errors.title?.type === 'required' && <p>The title must be entered</p>}
+                            {errors.title?.type === 'required' && <p className='valerror'>The title must be entered</p>}
                             
                         </div>
 
@@ -90,7 +90,7 @@ const ArticleAdd = () => {
                                 rows="3"
                                 {...register('description', {required:true})} 
                             />
-                            {errors.description?.type === 'required' && <p>The description must be entered</p>}
+                            {errors.description?.type === 'required' && <p className='valerror'>The description must be entered</p>}
                         </div>
 
                         <div className="mb-2">

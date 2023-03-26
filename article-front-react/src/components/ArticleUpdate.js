@@ -73,7 +73,7 @@ const ArticleUpdate = () => {
     if (article != null){
         return (
             <div className="container mb-4">
-                <h1 className="p-4 bg-header mt-1">Updating an Article</h1>
+                <h2 className="subtitle mt-3 mb-3">Updating an Article</h2>
                 
                 <div className='row mb-3' key={article.key}>
 
@@ -100,7 +100,7 @@ const ArticleUpdate = () => {
                                     defaultValue={article.title}
                                     {...register('title', {required: true})} 
                                 />
-                                {errors.title?.type === 'required' && <p>The title must be entered</p>}
+                                {errors.title?.type === 'required' && <p className='valerror'>The title must be entered</p>}
                                 
                             </div>
 
@@ -111,7 +111,7 @@ const ArticleUpdate = () => {
                                     defaultValue={article.description}
                                     {...register('description', {required: true})} 
                                 />
-                                {errors.description?.type === 'required' && <p>The description must be entered</p>}
+                                {errors.description?.type === 'required' && <p className='valerror'>The description must be entered</p>}
                             </div>
 
                             <div className="mb-2">

@@ -22,13 +22,13 @@ class Header extends React.Component{
                         <nav id="menu">
                             <ul>
                                 <li>
-                                    <NavLink to="/dashboard" className={({ isActive }) => (isActive ? 'active' : 'inactive')}>Dashboard</NavLink>
+                                    <NavLink to="/" className={({ isActive }) => (isActive ? 'active' : 'inactive')}>Dashboard</NavLink>
                                 </li>
                                 <li>
                                     <NavLink to="/articles" className={({ isActive }) => (isActive ? 'active' : 'inactive')}>Articles</NavLink>
                                 </li>
                                 <li>
-                                    <NavLink to="/converter" className={({ isActive }) => (isActive ? 'active' : 'inactive')}>ConverterTool</NavLink>
+                                    <NavLink to="/converter" className={({ isActive }) => (isActive ? 'active' : 'inactive')}>Tools</NavLink>
                                 </li>
                              
                             </ul>

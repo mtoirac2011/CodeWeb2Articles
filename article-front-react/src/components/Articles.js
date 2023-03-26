@@ -88,11 +88,10 @@ const Articles = () => {
             </div>
             
             <div className="container mt-3">
-                <h2>List of Articles</h2>
-               
+                <h2 className='subtitle'>Articles</h2>
                     <p>
                         <img onClick={() => onCreate()} src={create} className="img-thumbnail cursor" width={24} alt="Create" />
-                        <span> <strong>Add a article</strong> </span>   
+                        <span> <strong>Add</strong> </span>   
                     </p> 
                                   
                 <table className="table table-striped table-hover">

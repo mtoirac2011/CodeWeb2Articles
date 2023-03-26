@@ -203,3 +203,64 @@
   color: red;
   font-size: 20px;
 }
+
+/* CONVERTER */
+
+.App1{
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 20px;
+}
+
+.heading{
+  margin-bottom: 0px;
+}
+
+.container1{
+  height: 200px;
+  width: 800px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+input{
+  padding-left: 5px;
+  font-size: 20px;
+  height: 36px;
+}
+.middle,.right{
+  width: 120px;
+}
+.switch{
+  padding: 5px;
+  margin-top: 25px;
+  background-color: rgb(226, 252, 184);
+  border-radius: 50%;
+  cursor: pointer;
+}
+.boton{
+  margin-bottom: 20px;
+}
+.result{
+  box-sizing: border-box;
+  width: 800px;
+  padding-left: 30px;
+}
+
+.switch{
+  color: #61dafb;
+}
+.subtitle{
+  color: #61dafb;
+  font-weight: bold;
+}
+.texto1{
+  font-size: 40px;
+}
+.valerror{
+  color: red;
+}

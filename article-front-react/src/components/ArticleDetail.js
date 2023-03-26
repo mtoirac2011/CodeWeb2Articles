@@ -38,7 +38,7 @@ const ArticleDetail = () => {
 
                 <div className='title d-flex felx-row align-items-center'>
                     <div>
-                        <h1 className="p-4 bg-header mt-1">{article.title} </h1>
+                        <h2 className="subtitle mt-3 mb-3">{article.title} </h2>
                     </div>
                     <div id='completed'>
                         {article.completed ?
@@ -48,8 +48,6 @@ const ArticleDetail = () => {
                         }
                     </div>
                 </div>
-
-                
                 
                 <div className='row-1 d-flex flex-row flex-sm-row'>
 
