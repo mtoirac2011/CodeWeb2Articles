@@ -4,6 +4,20 @@
 
 This is a ***NodeJS - MongoDB - JavaScript (React)*** project. With this application we try to handle the creation, update, and manage articles. Articles will be created, updated, and erased in an esay way.
 
+#### Features used in the project:
+* Analyze data that is stored in arrays, objects, sets or maps and display    information about it in your app.
+* Visualize data in a user friendly way (e.g. graph, chart, etc).
+* Convert user input between two formats and display the result. (e.g. Fahrenheit to
+Celcius, kilograms to pounds, etc).
+* Calculate and display data based on an external factor (ex: get the current date, and display how many days remaining until some event).
+* Create a form and store the submitted values using an external API (e.g. a contact
+form, survey, etc).
+* Create a node.js web server using a modern framework such as Express.js or Fastify.
+Serve at least one route that your app uses (must serve more than just the index.html
+file).
+* Interact with a database to store and retrieve information (e.g. MySQL, MongoDB,  etc).
+* Develop your project using a common JavaScript framework such as React, Angular, or Vue.
+
 ### Technologies used
 | Tecnology  | Description |
 | ---------- | ----------- |
@@ -68,6 +82,14 @@ npm install --save sweetalert2
 I installed moment to format Dates:
 ```sh
 npm install moment --save
+```
+I installed react-dropdown to use it in forms:
+```sh
+npm install react-donut-chart --save
+```
+I installed react-icons to use icons:
+```sh
+npm install react-icons --save
 ```
 Finally, I installed react-donut-chart to add Charts:
 ```sh
