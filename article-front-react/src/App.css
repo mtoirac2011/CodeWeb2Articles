@@ -180,6 +180,19 @@
   }
 }
 
+@media (max-width: 957px){
+  .header{
+    display: block;
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 718px){
+  .container1{
+    flex-direction: column;
+  }
+}
+
 /* FOOTER */
 #footer{
   background: white;

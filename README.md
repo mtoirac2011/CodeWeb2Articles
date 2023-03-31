@@ -4,7 +4,7 @@
 
 This is a ***NodeJS - MongoDB - JavaScript (React)*** project. With this application we try to handle the creation, update, and manage articles. Articles will be created, updated, and erased in an esay way.
 
-#### Features used in the project:
+### Features used in the project:
 * Analyze data that is stored in arrays, objects, sets or maps and display    information about it in your app.
 * Visualize data in a user friendly way (e.g. graph, chart, etc).
 * Convert user input between two formats and display the result. (e.g. Fahrenheit to

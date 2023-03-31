@@ -15,12 +15,7 @@ var controller = {
         })
      },
      getArticle: function(req, res){
-        //Article.find({completed: true}).limit(3).sort('created').exec((error, articles) =>
-        //or
-        // let query = Article.find({})
-        // query.sort({created: -1})
-        // query.exec((error, articles) => {}
-
+        
         Article.find({}).sort({created: -1}).exec((error, articles) => {
 
             if (error || !articles) return res.status(500).send({message: 'Error trying to retrieve articles'})
@@ -31,11 +26,7 @@ var controller = {
         })
      },
      getDashboard: function(req, res){
-        //Article.find({completed: true}).limit(3).sort('created').exec((error, articles) =>
-        //or
-        // let query = Article.find({})
-        // query.sort({created: -1})
-        // query.exec((error, articles) => {}
+       
         let dashboard = 0;
 
         Article.find({completed: true}).exec((error, articles) => {

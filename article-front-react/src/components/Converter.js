@@ -50,7 +50,7 @@ return (
         <div className="heading">
             <h2 className='subtitle'>Currency converter</h2>
         </div>
-        <div className="container1">
+        <div className="container1 d-flex">
             <div className="left">
                 <h3>Amount</h3>
                 <input type="text" 
